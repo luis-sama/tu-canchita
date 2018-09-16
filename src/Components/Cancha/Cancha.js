@@ -1,16 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const Cancha = (props) => (
-  <View style={styles.canchaItem}>
-  <Image resizeMode="contain" source={props.imagen} style={styles.canchaImagen} />
-    <View style={{flexDirection: "column"}}>
-      <Text>{props.nombre}</Text>
-      <Text>$ {props.precio}</Text>
-      <Text>{props.ubicacion}</Text>
-      <Text>{props.puntaje}</Text>
+  <TouchableOpacity onPress={props.onItemPressed}>
+    <View style={styles.canchaItem}>
+    <Image resizeMode="contain" source={props.imagen} style={styles.canchaImagen} />
+      <View style={{flexDirection: "column"}}>
+        <Text>{props.nombre}</Text>
+        <Text>$ {props.precio}</Text>
+        <Text>{props.ubicacion}</Text>
+        <Text>{props.puntaje}</Text>
+      </View>
     </View>
-  </View>  
+  </TouchableOpacity>
 );
 
 styles = StyleSheet.create({
