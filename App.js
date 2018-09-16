@@ -1,23 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {Navigation} from 'react-native-navigation';
+import Auth from './src/Screens/Auth/Auth';
+import Perfil from './src/Screens/Perfil/Perfil';
+import Busqueda from './src/Screens/Busqueda/Busqueda';
+import SignUp from './src/Screens/SignUp/SignUp';
+import Reservas from './src/Screens/Reservas/Reservas';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+// Registrar ventanas
+Navigation.registerComponent("miApp.AuthScreen", () => Auth);
+Navigation.registerComponent("miApp.SignUpScreen", () => SignUp);
+Navigation.registerComponent("miApp.PerfilScreen", () => Perfil);
+Navigation.registerComponent("miApp.BusquedaScreen", () => Busqueda);
+Navigation.registerComponent("miApp.ReservasScreen", () => Reservas);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+// Empezar la app
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: 'miApp.AuthScreen',
   },
+  animationType: 'none'
 });

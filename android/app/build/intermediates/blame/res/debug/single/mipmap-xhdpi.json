@@ -1,9 +1,5 @@
 [
     {
-        "merged": "C:\\Users\\Luis\\Documents\\Facu\\4\\Metodologias Agiles\\tu-canchita\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
-        "source": "C:\\Users\\Luis\\Documents\\Facu\\4\\Metodologias Agiles\\tu-canchita\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\Luis\\Documents\\Facu\\4\\Metodologias Agiles\\tu-canchita2\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
         "source": "C:\\Users\\Luis\\Documents\\Facu\\4\\Metodologias Agiles\\tu-canchita2\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     }
