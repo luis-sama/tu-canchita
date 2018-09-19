@@ -17,7 +17,7 @@ const CanchaDetalle = props => {
     );
   }
   return (
-    <Modal visible={props.canchaSeleccionada !== null} animationType="slide">
+    <Modal visible={props.canchaSeleccionada !== null} animationType="slide" onRequestClose={() => {}} >
       <View style={styles.modalContainer}>
         {modalContent}
         <View>

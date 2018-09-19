@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View } from 'react-native';
+import { SearchBar } from 'react-native-elements';
 
 import CanchaDetalle from '../../Components/CanchaDetalle/CanchaDetalle';
 import ListaCanchas from '../../Components/ListaCanchas/ListaCanchas';
@@ -34,6 +35,13 @@ class Busqueda extends Component {
   render() {
     return (
     <View>
+      <SearchBar
+        lightTheme
+        onChangeText={() => {}}
+        onClearText={() => {}}
+        icon={{ type: 'font-awesome', name: 'search' }}
+        placeholder='Type Here...' 
+      />
       <CanchaDetalle 
         canchaSeleccionada={this.state.canchaSeleccionada}
         onModalClosed={this.modalClosedHandler}
