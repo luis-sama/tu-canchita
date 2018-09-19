@@ -1,11 +1,11 @@
 import { Navigation } from 'react-native-navigation';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const startTabs = () => {
     Promise.all([
-        Icon.getImageSource("search", 30),
-        Icon.getImageSource("calendar_today", 30),
-        Icon.getImageSource("person", 30)
+        Icon.getImageSource("magnify", 30),
+        Icon.getImageSource("calendar-check", 30),
+        Icon.getImageSource("account", 30)
     ]).then( iconos => {
         Navigation.startTabBasedApp({
             tabs: [
