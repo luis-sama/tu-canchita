@@ -2,8 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const Cancha = (props) => (
-  <TouchableOpacity onPress={props.onItemPressed}>
-    <View style={styles.canchaItem}>
+  <TouchableOpacity onPress={props.onItemPressed} style={styles.canchaItem}>
     <Image resizeMode="contain" source={props.imagen} style={styles.canchaImagen} />
       <View style={{flexDirection: "column"}}>
         <Text>{props.nombre}</Text>
@@ -11,11 +10,10 @@ const Cancha = (props) => (
         <Text>{props.ubicacion}</Text>
         <Text>{props.puntaje}</Text>
       </View>
-    </View>
   </TouchableOpacity>
 );
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
   canchaItem: {
     width: '100%',
     marginBottom: 5,
