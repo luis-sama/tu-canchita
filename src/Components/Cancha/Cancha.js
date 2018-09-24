@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderBottomColor: '#000',
     borderBottomWidth: 1,
-    alignItems: "center"
+    alignItems: "center",
+    marginBottom: 10
   },
   canchaImagen: {
     marginRight: 8,
