@@ -18,6 +18,7 @@ class Turno extends Component {
   render() {
     return (
       <TouchableOpacity onPress={this.onTurnoPressed} style={this.state.colorContainer}>
+        <Text style={styles.white}>{this.props.fecha}</Text>
         <Text style={styles.white}>{this.props.horario}</Text>
       </TouchableOpacity>
     )
