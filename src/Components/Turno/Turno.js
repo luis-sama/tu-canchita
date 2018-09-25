@@ -1,29 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-class Turno extends Component {
-  state = {
-    alquilado: false,
-    colorContainer: styles.turnoContainer
+const Turno = props => {
+
+  let colorFondo = "styles.turnoContainer";
+  
+  if (props.alquilado == true) {
+    colorFondo = "styles.turnoContainerDesabilitado";
   }
 
-  onTurnoPressed = () => {
-    if (this.state.alquilado == false) {
-      this.setState({alquilado: true, colorContainer: styles.turnoContainerDesabilitado});
-    } else {
-      this.setState({alquilado: false, colorContainer: styles.turnoContainer});
-    }
-  }
-
-  render() {
-    return (
-      <TouchableOpacity onPress={this.onTurnoPressed} style={this.state.colorContainer}>
-        <Text style={styles.white}>{this.props.fecha}</Text>
-        <Text style={styles.white}>{this.props.horario}</Text>
-      </TouchableOpacity>
-    )
-  }
-}
+  return (
+    <TouchableOpacity onPress={props.onTurnoPressed} style={eval(colorFondo)}>
+      <Text style={styles.white}>{props.fecha}</Text>
+      <Text style={styles.white}>{props.horario}</Text>
+    </TouchableOpacity>
+    );
+};
 
 const styles = StyleSheet.create({
   turnoContainer: {
