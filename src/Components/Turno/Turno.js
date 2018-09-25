@@ -13,6 +13,8 @@ const Turno = props => {
     <TouchableOpacity onPress={props.onTurnoPressed} style={eval(colorFondo)}>
       <Text style={styles.white}>{props.fecha}</Text>
       <Text style={styles.white}>{props.horario}</Text>
+      <Text>{props.nombreCancha}</Text>
+      <Text>{props.precioCancha}</Text>
     </TouchableOpacity>
     );
 };

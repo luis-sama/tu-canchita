@@ -12,6 +12,8 @@ const ListaTurnos = props => {
       onTurnoPressed={() => props.onTurnoSelected(turno.id)}
       alquilado={turno.alquilado}
       key={turno.id}
+      nombreCancha={props.nombreCancha}
+      precioCancha={props.precioCancha}
     />
  ));
  return <ScrollView>{listarTurnos}</ScrollView>

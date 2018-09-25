@@ -5,17 +5,12 @@ import ListaTurnos from '../ListaTurnos/ListaTurnos';
 
 class CanchaDetalle extends Component {
   state = { 
-    turnos: [
-      {id: 1, fecha:'25-9-2018', horario:'16-17', alquilado: false},
-      {id: 2, fecha:'25-9-2018', horario:'17-18', alquilado: false},
-      {id: 3, fecha:'25-9-2018', horario:'18-19', alquilado: false},
-      {id: 4, fecha:'25-9-2018', horario:'19-20', alquilado: false}
-    ]
+    
   }
   
   turnoSelectedHandler = id => {
     this.setState(
-        this.state.turnos.map(turno => {
+      this.props.canchaSeleccionada.turnos.map(turno => {
           if (turno.id == id) {
             return turno.alquilado = true
           }
@@ -34,8 +29,10 @@ class CanchaDetalle extends Component {
           <Image source={this.props.canchaSeleccionada.imagen} style={styles.placeImage} />
           <Text style={styles.placeName}>{this.props.canchaSeleccionada.nombre}</Text>
           <ListaTurnos 
-            turnos={this.state.turnos}
+            turnos={this.props.canchaSeleccionada.turnos}
             onTurnoSelected={this.turnoSelectedHandler}
+            // nombreCancha={this.props.canchaSeleccionada.nombre}
+            // precioCancha={this.props.canchaSeleccionada.precio}
           />
         </View>
       );

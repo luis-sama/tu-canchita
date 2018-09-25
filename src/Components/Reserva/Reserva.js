@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       borderWidth: 1,
       borderColor: 'black',
-      marginTop: 10
+      marginTop: 5,
+      marginBottom: 5
     }
   });
 

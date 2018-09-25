@@ -1,0 +1,219 @@
+[
+    {
+        "id": 1, 
+        "nombre": "La cancha de tu hermana", 
+        "precio": "400", 
+        "ubicacion": "La Plata", 
+        "puntaje": "4", 
+        "imagen": {"uri": "https://www.elancasti.com.ar/u/fotografias/fotosnoticias/2018/8/30/146506.jpg"}, 
+        "turnos": [
+            {
+                "id": 1, 
+                "fecha":"25-9-2018", 
+                "horario":"16-17", 
+                "alquilado": false
+            },
+            {
+                "id": 2, 
+                "fecha":"25-9-2018", 
+                "horario":"17-18", 
+                "alquilado": false},
+            {
+                "id": 3, 
+                "fecha":"25-9-2018", 
+                "horario":"18-19", 
+                "alquilado": false},
+            {
+                "id": 4, 
+                "fecha":"25-9-2018", 
+                "horario":"19-20", 
+                "alquilado": false}
+          ]
+    },
+    {
+        "id": 2, 
+        "nombre": "Lo de roberto", 
+        "precio": "350", 
+        "ubicacion": "La Plata", 
+        "puntaje": "2", 
+        "imagen": {"uri": "https://www.hoysejuega.com/uploads/Modules/ImagenesComplejos/800_600_heroes-futbol-2.jpg"}, 
+        "turnos": [
+            {
+                "id": 1, 
+                "fecha":"25-9-2018", 
+                "horario":"16-17", 
+                "alquilado": false
+            },
+            {
+                "id": 2, 
+                "fecha":"25-9-2018", 
+                "horario":"17-18", 
+                "alquilado": false},
+            {
+                "id": 3, 
+                "fecha":"25-9-2018", 
+                "horario":"18-19", 
+                "alquilado": false},
+            {
+                "id": 4, 
+                "fecha":"25-9-2018", 
+                "horario":"19-20", 
+                "alquilado": false}
+          ]
+    },
+    {
+        "id": 3, 
+        "nombre": "Canchas luifa", 
+        "precio": "1100", 
+        "ubicacion": "La Plata", 
+        "puntaje": "5", 
+        "imagen": {"uri": "http://www.catrielonline.com/fotos/pelota.jpg"}, 
+        "turnos": [
+            {
+                "id": 1, 
+                "fecha":"25-9-2018", 
+                "horario":"16-17", 
+                "alquilado": false
+            },
+            {
+                "id": 2, 
+                "fecha":"25-9-2018", 
+                "horario":"17-18", 
+                "alquilado": false},
+            {
+                "id": 3, 
+                "fecha":"25-9-2018", 
+                "horario":"18-19", 
+                "alquilado": false},
+            {
+                "id": 4, 
+                "fecha":"25-9-2018", 
+                "horario":"19-20", 
+                "alquilado": false}
+          ]
+    },
+    {
+        "id": 4, 
+        "nombre": "Mana", 
+        "precio": "200", 
+        "ubicacion": "La Plata", 
+        "puntaje": "4", 
+        "imagen": {"uri": "https://www.elancasti.com.ar/u/fotografias/fotosnoticias/2018/8/30/146506.jpg"}, 
+        "turnos": [
+            {
+                "id": 1, 
+                "fecha":"25-9-2018", 
+                "horario":"16-17", 
+                "alquilado": false
+            },
+            {
+                "id": 2, 
+                "fecha":"25-9-2018", 
+                "horario":"17-18", 
+                "alquilado": false},
+            {
+                "id": 3, 
+                "fecha":"25-9-2018", 
+                "horario":"18-19", 
+                "alquilado": false},
+            {
+                "id": 4, 
+                "fecha":"25-9-2018", 
+                "horario":"19-20", 
+                "alquilado": false}
+          ]
+    },
+    {
+        "id": 5, 
+        "nombre": "Lobelto", 
+        "precio": "150", 
+        "ubicacion": "La Plata", 
+        "puntaje": "2", 
+        "imagen": {"uri": "https://www.hoysejuega.com/uploads/Modules/ImagenesComplejos/800_600_heroes-futbol-2.jpg"}, 
+        "turnos": [
+            {
+                "id": 1, 
+                "fecha":"25-9-2018", 
+                "horario":"16-17", 
+                "alquilado": false
+            },
+            {
+                "id": 2, 
+                "fecha":"25-9-2018", 
+                "horario":"17-18", 
+                "alquilado": false},
+            {
+                "id": 3, 
+                "fecha":"25-9-2018", 
+                "horario":"18-19", 
+                "alquilado": false},
+            {
+                "id": 4, 
+                "fecha":"25-9-2018", 
+                "horario":"19-20", 
+                "alquilado": false}
+          ]
+    },
+    {
+        "id": 6, 
+        "nombre": "Canchas Nacho", 
+        "precio": "180", 
+        "ubicacion": "La Plata", 
+        "puntaje": "5", 
+        "imagen": {"uri": "http://www.catrielonline.com/fotos/pelota.jpg"}, 
+        "turnos": [
+            {
+                "id": 1, 
+                "fecha":"25-9-2018", 
+                "horario":"16-17", 
+                "alquilado": false
+            },
+            {
+                "id": 2, 
+                "fecha":"25-9-2018", 
+                "horario":"17-18", 
+                "alquilado": false},
+            {
+                "id": 3, 
+                "fecha":"25-9-2018", 
+                "horario":"18-19", 
+                "alquilado": false},
+            {
+                "id": 4, 
+                "fecha":"25-9-2018", 
+                "horario":"19-20", 
+                "alquilado": false}
+          ]
+    },
+    {
+        "id": 7, 
+        "nombre": "a", 
+        "precio": "180", 
+        "ubicacion": "La Plata", 
+        "puntaje": "5", 
+        "imagen": {"uri": "http://www.catrielonline.com/fotos/pelota.jpg"}, 
+        "turnos": [
+            {
+                "id": 1, 
+                "fecha":"25-9-2018", 
+                "horario":"16-17", 
+                "alquilado": false
+            },
+            {
+                "id": 2, 
+                "fecha":"25-9-2018", 
+                "horario":"17-18", 
+                "alquilado": false},
+            {
+                "id": 3, 
+                "fecha":"25-9-2018", 
+                "horario":"18-19", 
+                "alquilado": false},
+            {
+                "id": 4, 
+                "fecha":"25-9-2018", 
+                "horario":"19-20", 
+                "alquilado": false}
+          ]
+    }
+  ]
