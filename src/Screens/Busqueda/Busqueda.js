@@ -1,42 +1,23 @@
 import React, { Component } from 'react'
 import { View } from 'react-native';
 import { SearchBar } from 'react-native-elements';
-
 import CanchaDetalle from '../../Components/CanchaDetalle/CanchaDetalle';
 import ListaCanchas from '../../Components/ListaCanchas/ListaCanchas';
-import canchas from '../../json/canchas.json'
+import { connect } from 'react-redux';
+import { buscarCancha, seleccionarCancha, ocultarModalCancha } from '../../store/actions/index'
 
 class Busqueda extends Component {
-  state = {
-    canchas,
-    canchasFiltradas: [],
-    canchaSeleccionada: null
+  
+  buscarCanchas = (nombre) => {
+    this.props.buscarCancha(nombre);
   }
 
-  componentDidMount () {
-    this.setState({canchasFiltradas: this.state.canchas})
+  canchaSeleccionadaHandler = id => {
+    this.props.seleccionarCancha(id)
   }
-
-  canchaSeleccionadaHandler  = id => {
-    this.setState(prevState => {
-      return {
-        canchaSeleccionada: prevState.canchas.find(cancha => {
-          return cancha.id == id; 
-        })
-      };
-    });
-  };
 
   modalClosedHandler = () => {
-    this.setState({canchaSeleccionada: null});
-  }
-
-  buscarCanchas = (nombre) => {
-    this.setState({
-      canchasFiltradas: this.state.canchas.filter(cancha => {
-        return cancha.nombre.indexOf(nombre) > -1
-      })
-    })
+    this.props.ocultarModalCancha()
   }
 
   render() {
@@ -45,16 +26,16 @@ class Busqueda extends Component {
       <SearchBar
         lightTheme
         onChangeText={nombre => this.buscarCanchas(nombre)}
-        onClearText={() => this.setState({canchas})}
+        onClearText={() => {}}
         icon={{ type: 'font-awesome', name: 'search' }}
         placeholder='Buscar canchas...' 
       />
       <CanchaDetalle 
-        canchaSeleccionada={this.state.canchaSeleccionada}
+        canchaSeleccionada={this.props.canchaSeleccionada}
         onModalClosed={this.modalClosedHandler}
       />
       <ListaCanchas 
-        canchas={this.state.canchasFiltradas}
+        canchas={this.props.canchas}
         onItemSelected={this.canchaSeleccionadaHandler}
       />
     </View>
@@ -62,4 +43,21 @@ class Busqueda extends Component {
   }
 }
 
-export default Busqueda;
+const mapStateToProps = state => {
+  return {
+    //comolollamo: state.(configurestore).(reducers/root.js)
+    canchas: state.canchas.canchas,
+    canchasFiltradas: state.canchas.canchasFiltradas,
+    canchaSeleccionada: state.canchas.canchaSeleccionada
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    //comolollamo: () => dispatch(actions/index.js)
+    seleccionarCancha: id => dispatch(seleccionarCancha(id)),
+    ocultarModalCancha: () => dispatch(ocultarModalCancha()),
+    buscarCancha: nombre => dispatch(buscarCancha(nombre)),
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Busqueda);

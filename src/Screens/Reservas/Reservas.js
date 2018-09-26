@@ -1,21 +1,28 @@
 import React, { Component } from 'react'
-import { ScrollView, Text } from 'react-native';
-import Reserva from '../../Components/Reserva/Reserva';
+import { ScrollView } from 'react-native';
+import ListaReservas from '../../Components/ListaReservas/ListaReservas';
+import { connect } from 'react-redux';
 
 class Reservas extends Component {
   render() {
+    
     return (
-      <ScrollView>
-        {/* <Reserva
-          cancha="Nombre de la cancha"
-          fecha="Fecha de la reserva"
-          horario="Horario de la reserva"
-          precio="Precio de la reserva"
-        /> */}
-        <Text></Text>
-      </ScrollView>
+      // <ListaReservas
+      //   reservas={}
+      // />
+      <ScrollView/>
     )
   }
 }
 
-export default Reservas;
+const mapStateToProps = state => {
+  return {
+    canchas: state.canchas.canchas,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Reservas);
