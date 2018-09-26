@@ -1,5 +1,5 @@
 import canchas from '../../json/canchas.json';
-import { BUSCAR_CANCHA, SELECCIONAR_CANCHA, OCULTAR_MODAL_CANCHA } from '../actions/actionTypes';
+import { SELECCIONAR_CANCHA, OCULTAR_MODAL_CANCHA, BUSCAR_CANCHA, CARGAR_CANCHAS_FILTRADAS } from '../actions/actionTypes';
 
 const initialState = {
     canchas,
@@ -9,14 +9,6 @@ const initialState = {
 
 const reducer = (state=initialState, action) => {
     switch (action.type) {
-        case BUSCAR_CANCHA:
-            return {
-                ...state,
-                // canchasFiltradas: state.canchas.filter(cancha => {
-                canchas: state.canchas.filter(cancha => {
-                    return cancha.nombre.indexOf(action.nombre) > -1
-                })
-            };
         case SELECCIONAR_CANCHA:
             return {
                 ...state,
@@ -29,9 +21,21 @@ const reducer = (state=initialState, action) => {
                 ...state,
                 canchaSeleccionada: null
             }
+        case BUSCAR_CANCHA:
+        return {
+            ...state,
+            canchasFiltradas: state.canchas.filter(cancha => {
+                return cancha.nombre.indexOf(action.nombre) > -1
+            })
+        };
+        case CARGAR_CANCHAS_FILTRADAS:
+        return {
+            ...state,
+            canchasFiltradas: state.canchas
+        }
         default:
             return state;
     }
 };
 
-export default reducer;
+export default reducer; 

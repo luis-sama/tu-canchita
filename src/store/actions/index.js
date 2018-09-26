@@ -1,1 +1,1 @@
-export { buscarCancha, seleccionarCancha, ocultarModalCancha } from './root'
+export { seleccionarCancha, ocultarModalCancha, buscarCancha, cargarCanchasFiltradas } from './root'

@@ -7,39 +7,39 @@ import ListaCanchas from '../../Components/ListaCanchas/ListaCanchas';
 import canchas from '../../json/canchas.json'
 
 class Busqueda extends Component {
-  state = {
-    canchas,
-    canchasFiltradas: [],
-    canchaSeleccionada: null
-  }
+  // state = {
+  //   canchas,
+  //   canchasFiltradas: [],
+  //   canchaSeleccionada: null
+  // }
 
-  componentDidMount () {
-    this.setState({canchasFiltradas: this.state.canchas})
-  }
+  // componentDidMount () {
+  //   this.setState({canchasFiltradas: this.state.canchas})
+  // }
 
-  buscarCanchas = (nombre) => {
-    this.setState({
-      canchasFiltradas: this.state.canchas.filter(cancha => {
-        return cancha.nombre.indexOf(nombre) > -1
-      })
-    })
-  }
+  // buscarCanchas = (nombre) => {
+  //   this.setState({
+  //     canchasFiltradas: this.state.canchas.filter(cancha => {
+  //       return cancha.nombre.indexOf(nombre) > -1
+  //     })
+  //   })
+  // }
   
   
   
-  canchaSeleccionadaHandler  = id => {
-    this.setState(prevState => {
-      return {
-        canchaSeleccionada: prevState.canchas.find(cancha => {
-          return cancha.id == id; 
-        })
-      };
-    });
-  };
+  // canchaSeleccionadaHandler  = id => {
+  //   this.setState(prevState => {
+  //     return {
+  //       canchaSeleccionada: prevState.canchas.find(cancha => {
+  //         return cancha.id == id; 
+  //       })
+  //     };
+  //   });
+  // };
 
-  modalClosedHandler = () => {
-    this.setState({canchaSeleccionada: null});
-  }
+  // modalClosedHandler = () => {
+  //   this.setState({canchaSeleccionada: null});
+  // }
 
   
   

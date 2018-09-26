@@ -4,20 +4,23 @@ import { SearchBar } from 'react-native-elements';
 import CanchaDetalle from '../../Components/CanchaDetalle/CanchaDetalle';
 import ListaCanchas from '../../Components/ListaCanchas/ListaCanchas';
 import { connect } from 'react-redux';
-import { buscarCancha, seleccionarCancha, ocultarModalCancha } from '../../store/actions/index'
+import { seleccionarCancha, ocultarModalCancha, buscarCancha, cargarCanchasFiltradas } from '../../store/actions/index'
 
 class Busqueda extends Component {
-  
-  buscarCanchas = (nombre) => {
-    this.props.buscarCancha(nombre);
-  }
-
   canchaSeleccionadaHandler = id => {
     this.props.seleccionarCancha(id)
   }
 
   modalClosedHandler = () => {
     this.props.ocultarModalCancha()
+  }
+
+  buscarCanchas = nombre => {
+      this.props.buscarCancha(nombre);
+    }
+
+  componenetDidMount() {
+    this.props.cargarCanchasFiltradas();
   }
 
   render() {
@@ -35,7 +38,7 @@ class Busqueda extends Component {
         onModalClosed={this.modalClosedHandler}
       />
       <ListaCanchas 
-        canchas={this.props.canchas}
+        canchas={this.props.canchasFiltradas}
         onItemSelected={this.canchaSeleccionadaHandler}
       />
     </View>
@@ -58,6 +61,7 @@ const mapDispatchToProps = dispatch => {
     seleccionarCancha: id => dispatch(seleccionarCancha(id)),
     ocultarModalCancha: () => dispatch(ocultarModalCancha()),
     buscarCancha: nombre => dispatch(buscarCancha(nombre)),
+    cargarCanchasFiltradas: () => dispatch(cargarCanchasFiltradas()),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Busqueda);
