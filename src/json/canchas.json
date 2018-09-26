@@ -22,7 +22,7 @@
                 "id": 3, 
                 "fecha":"25-9-2018", 
                 "horario":"18-19", 
-                "alquilado": false},
+                "alquilado": true},
             {
                 "id": 4, 
                 "fecha":"25-9-2018", 
@@ -48,7 +48,7 @@
                 "id": 2, 
                 "fecha":"25-9-2018", 
                 "horario":"17-18", 
-                "alquilado": false},
+                "alquilado": true},
             {
                 "id": 3, 
                 "fecha":"25-9-2018", 
