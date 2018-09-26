@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: null,
     height: null,
-    //justifyContent: 'center',
+    marginTop: 10,
     alignItems: 'center',
   }
 });
