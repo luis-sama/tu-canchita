@@ -3,7 +3,7 @@ import { SELECCIONAR_CANCHA, OCULTAR_MODAL_CANCHA, BUSCAR_CANCHA, CARGAR_CANCHAS
 
 const initialState = {
     canchas,
-    canchasFiltradas: [],
+    canchasFiltradas: canchas,
     canchaSeleccionada: null
 };
 

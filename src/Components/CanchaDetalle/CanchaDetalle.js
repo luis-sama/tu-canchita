@@ -4,16 +4,13 @@ import { Modal, View, Image, Text, Button, StyleSheet } from 'react-native';
 import ListaTurnos from '../ListaTurnos/ListaTurnos';
 
 class CanchaDetalle extends Component {
-  state = { 
-    
-  }
-  
+
   turnoSelectedHandler = id => {
     this.setState(
       this.props.canchaSeleccionada.turnos.map(turno => {
-        if (turno.id == id) {
-          return turno.alquilado = true
-        }
+        if (turno.id == id) (
+          turno.alquilado = true
+        )
       })
     )};
   
@@ -28,8 +25,6 @@ class CanchaDetalle extends Component {
           <ListaTurnos 
             turnos={this.props.canchaSeleccionada.turnos}
             onTurnoSelected={this.turnoSelectedHandler}
-            // nombreCancha={this.props.canchaSeleccionada.nombre}
-            // precioCancha={this.props.canchaSeleccionada.precio}
           />
         </View>
       );

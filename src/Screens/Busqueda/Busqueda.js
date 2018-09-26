@@ -29,7 +29,7 @@ class Busqueda extends Component {
       <SearchBar
         lightTheme
         onChangeText={nombre => this.buscarCanchas(nombre)}
-        onClearText={() => {}}
+        // onClearText={() => {}}
         icon={{ type: 'font-awesome', name: 'search' }}
         placeholder='Buscar canchas...' 
       />

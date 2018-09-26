@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 class Reservas extends Component {
   render() {
     const reservas = this.props.canchas.map(cancha => {
-      return cancha.turnos.filter(turno => {
+      return cancha.turnos
+      .filter(turno => {
         return turno.alquilado == true;
       })
       .map(turno => (
@@ -29,7 +30,7 @@ class Reservas extends Component {
 
 const mapStateToProps = state => {
   return {
-    canchas: state.canchas.canchas,
+    canchas: state.canchas.canchasFiltradas,
   }
 }
 
