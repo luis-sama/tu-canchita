@@ -11,23 +11,20 @@ class CanchaDetalle extends Component {
   turnoSelectedHandler = id => {
     this.setState(
       this.props.canchaSeleccionada.turnos.map(turno => {
-          if (turno.id == id) {
-            return turno.alquilado = true
-          }
-        })
-      )
-    }
-
+        if (turno.id == id) {
+          return turno.alquilado = true
+        }
+      })
+    )};
   
-
   render() {
     let modalContent = null;
 
     if (this.props.canchaSeleccionada) {
       modalContent = (
         <View>
-          <Image source={this.props.canchaSeleccionada.imagen} style={styles.placeImage} />
           <Text style={styles.placeName}>{this.props.canchaSeleccionada.nombre}</Text>
+          <Image source={this.props.canchaSeleccionada.imagen} style={styles.placeImage} />
           <ListaTurnos 
             turnos={this.props.canchaSeleccionada.turnos}
             onTurnoSelected={this.turnoSelectedHandler}
