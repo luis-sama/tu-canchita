@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Turno = props => {
 
@@ -11,8 +12,20 @@ const Turno = props => {
 
   return (
     <TouchableOpacity onPress={props.onTurnoPressed} style={eval(colorFondo)}>
-      <Text style={styles.white}>{props.fecha}</Text>
-      <Text style={styles.white}>{props.horario}</Text>
+      <Text style={styles.white}>
+        <Icon 
+          name="calendar"
+          size={15}
+        />
+        Fecha: {props.fecha}
+      </Text>
+      <Text style={styles.white}>
+        <Icon 
+          name="timer"
+          size={15}
+        />
+        Hora: {props.horario}
+      </Text>
       <Text>{props.nombreCancha}</Text>
       <Text>{props.precioCancha}</Text>
     </TouchableOpacity>
@@ -35,7 +48,9 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   white: {
-    color: "white"
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 15
   }
 });
 

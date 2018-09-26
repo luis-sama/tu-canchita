@@ -1,34 +1,50 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Cancha = (props) => (
-  <TouchableOpacity onPress={props.onItemPressed} style={styles.canchaItem}>
-    <Image resizeMode="contain" source={props.imagen} style={styles.canchaImagen} />
-      <View style={{flexDirection: "column"}}>
-        <Text>{props.nombre}</Text>
-        <Text>$ {props.precio}</Text>
-        <Text>{props.ubicacion}</Text>
-        <Text>{props.puntaje}</Text>
-      </View>
-  </TouchableOpacity>
-);
+    <TouchableOpacity onPress={props.onItemPressed} style={styles.canchaItem}>
+      <Image resizeMode="contain" source={props.imagen} style={styles.canchaImagen} />
+        <View style={{flexDirection: "column"}}>
+          <Text style={styles.canchaNombre}>{props.nombre}</Text>
+          <Text>{props.ubicacion}</Text>
+          <Text>
+            {props.puntaje}
+            <Icon
+              name='star'
+              size={15}
+            />
+          </Text>
+        </View>
+      <Text style={styles.canchaPrecio}>${props.precio}</Text>
+    </TouchableOpacity>
+  );
 
 const styles = StyleSheet.create({
   canchaItem: {
     width: '100%',
-    marginBottom: 5,
     padding: 10,
     backgroundColor: '#fff',
     flexDirection: 'row',
-    borderBottomColor: '#000',
-    borderBottomWidth: 1,
-    alignItems: "center",
-    marginBottom: 10
+    borderBottomColor: '#b5acb7',
+    borderBottomWidth: 2,
+    marginBottom: 10,
   },
   canchaImagen: {
     marginRight: 8,
     height: 70,
     width: 70
+  },
+  canchaNombre: {
+    fontSize: 15,
+    fontWeight: 'bold'
+  },
+  canchaPrecio: {
+    fontSize: 30,
+    position: 'absolute', 
+    right: 15, 
+    top: 15,
+    fontWeight: 'bold'
   }
 });
 
