@@ -19,7 +19,7 @@ class Busqueda extends Component {
       this.props.buscarCancha(nombre);
     }
 
-  componenetDidMount() {
+  componentDidMount() {
     this.props.cargarCanchasFiltradas();
   }
 

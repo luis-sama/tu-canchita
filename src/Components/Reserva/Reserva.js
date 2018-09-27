@@ -16,7 +16,7 @@ Reserva = props => {
             name='close-circle'
             size={25}
             color='red'
-            onPress={() => {alert('CERRAR')}}
+            onPress={() => {alert('Cancelar reserva')}}
           />
         </View> 
     </View>

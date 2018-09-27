@@ -1,7 +1,7 @@
 [
     {
-        "id": 1, 
-        "nombre": "La cancha de tu hermana", 
+        "id": 1,
+        "nombre": "Cancha 1",
         "precio": "400", 
         "ubicacion": "La Plata", 
         "puntaje": "4", 
@@ -11,8 +11,7 @@
                 "id": 1, 
                 "fecha":"25-9-2018", 
                 "horario":"16-17", 
-                "alquilado": false
-            },
+                "alquilado": false},
             {
                 "id": 2, 
                 "fecha":"25-9-2018", 
@@ -22,7 +21,7 @@
                 "id": 3, 
                 "fecha":"25-9-2018", 
                 "horario":"18-19", 
-                "alquilado": true},
+                "alquilado": false},
             {
                 "id": 4, 
                 "fecha":"25-9-2018", 
@@ -32,7 +31,7 @@
     },
     {
         "id": 2, 
-        "nombre": "Lo de roberto", 
+        "nombre": "Cancha 2", 
         "precio": "350", 
         "ubicacion": "La Plata", 
         "puntaje": "2", 
@@ -48,7 +47,7 @@
                 "id": 2, 
                 "fecha":"25-9-2018", 
                 "horario":"17-18", 
-                "alquilado": true},
+                "alquilado": false},
             {
                 "id": 3, 
                 "fecha":"25-9-2018", 
@@ -63,7 +62,7 @@
     },
     {
         "id": 3, 
-        "nombre": "Canchas luifa", 
+        "nombre": "Cancha 3", 
         "precio": "1100", 
         "ubicacion": "La Plata", 
         "puntaje": "5", 
@@ -94,7 +93,7 @@
     },
     {
         "id": 4, 
-        "nombre": "Mana", 
+        "nombre": "Cancha 4", 
         "precio": "200", 
         "ubicacion": "La Plata", 
         "puntaje": "4", 
@@ -125,7 +124,7 @@
     },
     {
         "id": 5, 
-        "nombre": "Lobelto", 
+        "nombre": "Cancha 5", 
         "precio": "150", 
         "ubicacion": "La Plata", 
         "puntaje": "2", 
@@ -156,7 +155,7 @@
     },
     {
         "id": 6, 
-        "nombre": "Canchas Nacho", 
+        "nombre": "Cancha 6", 
         "precio": "180", 
         "ubicacion": "La Plata", 
         "puntaje": "5", 
@@ -187,7 +186,7 @@
     },
     {
         "id": 7, 
-        "nombre": "a", 
+        "nombre": "Cancha 7", 
         "precio": "180", 
         "ubicacion": "La Plata", 
         "puntaje": "5", 

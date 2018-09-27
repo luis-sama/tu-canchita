@@ -28,7 +28,7 @@ export default class Auth extends Component {
         <View style={styles.formulario}>
           <TextInput style={styles.input} placeholder="Usuario"></TextInput>
           <TextInput style={styles.input} secureTextEntry={true} placeholder="Contraseña"></TextInput>
-          <Button title='Iniciá sesión' onPress={this.loginHandler} style={{flex:1}}/>
+          <View style={{marginBottom: 10, marginTop: 10}}><Button title='Iniciá sesión' onPress={this.loginHandler} style={{flex:1}}/></View>
           <Button title='Creá una cuenta' onPress={this.signuphandler} style={{flex:1}}/>
         </View>
       </ImageBackground>
@@ -53,9 +53,11 @@ const styles = StyleSheet.create({
     width: ANCHO_PANTALLA - 40,
     height: 40,
     marginHorizontal: 20,
-    paddingLeft: 45,
+    paddingLeft: 25,
     borderRadius: 20,
-    color: '#ffffff',
-    margin: 15,
+    fontSize: 15,
+    color: 'black',
+    fontWeight: 'bold',
+    margin: 15
   }
 });

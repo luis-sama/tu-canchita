@@ -36,15 +36,16 @@ const styles = StyleSheet.create({
     width: 70
   },
   canchaNombre: {
-    fontSize: 15,
-    fontWeight: 'bold'
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'black'
   },
   canchaPrecio: {
     fontSize: 30,
     position: 'absolute', 
     right: 15, 
-    top: 15,
-    fontWeight: 'bold'
+    top: 25,
+    fontWeight: 'bold',
   }
 });
 

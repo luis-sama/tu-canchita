@@ -10,9 +10,9 @@ class Perfil extends Component {
             size="xlarge"
             rounded
             //source={{uri: "https://www.patchcollection.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/s/p/spiderman_extra_large_logo.jpg"}}
-            title="LU"
+            title="IM"
           />
-          <Text>Luis Urán</Text>
+          <Text style={{fontSize: 18, color: 'black'}}>Ignacio Macías</Text>
       </View>
     )
   }
@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
     flex: 1,
     width: null,
     height: null,
-    marginTop: 10,
-    alignItems: 'center',
+    marginTop: 20,
+    alignItems: 'center'
   }
 });
 

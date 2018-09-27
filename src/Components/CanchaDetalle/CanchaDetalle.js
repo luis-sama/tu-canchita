@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Modal, View, Image, Text, Button, StyleSheet } from 'react-native';
+import { Modal, View, Image, Text, Button, StyleSheet, ScrollView } from 'react-native';
 
 import ListaTurnos from '../ListaTurnos/ListaTurnos';
+import { connect } from 'react-redux';
+import { seleccionarTurno } from '../../store/actions/index'
 
 class CanchaDetalle extends Component {
 
@@ -12,7 +14,9 @@ class CanchaDetalle extends Component {
           turno.alquilado = true
         )
       })
-    )};
+    )
+    // this.props.seleccionarTurno(id);
+  };
   
   render() {
     let modalContent = null;
@@ -31,12 +35,12 @@ class CanchaDetalle extends Component {
     }
     return (
       <Modal visible={this.props.canchaSeleccionada !== null} animationType="slide" onRequestClose={() => {}} >
-        <View style={styles.modalContainer}>
+        <ScrollView style={styles.modalContainer}>
           {modalContent}
           <View>
             <Button title="Close" onPress={this.props.onModalClosed}/>
           </View>
-        </View>
+        </ScrollView>
       </Modal>
     );
   }
@@ -57,4 +61,16 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CanchaDetalle;
+const mapStateToProps = state => {
+  return {
+    canchas: state.canchas.canchasFiltradas,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    seleccionarTurno: id => dispatch(seleccionarTurno(id)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CanchaDetalle);

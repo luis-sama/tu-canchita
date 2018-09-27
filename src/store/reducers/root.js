@@ -1,5 +1,11 @@
 import canchas from '../../json/canchas.json';
-import { SELECCIONAR_CANCHA, OCULTAR_MODAL_CANCHA, BUSCAR_CANCHA, CARGAR_CANCHAS_FILTRADAS } from '../actions/actionTypes';
+import { 
+    SELECCIONAR_CANCHA, 
+    OCULTAR_MODAL_CANCHA, 
+    BUSCAR_CANCHA, 
+    CARGAR_CANCHAS_FILTRADAS,
+    SELECCIONAR_TURNO
+} from '../actions/actionTypes';
 
 const initialState = {
     canchas,
@@ -32,7 +38,16 @@ const reducer = (state=initialState, action) => {
         return {
             ...state,
             canchasFiltradas: state.canchas
-        }
+        };
+        case SELECCIONAR_TURNO:
+        return {
+            ...state,
+            canchaSeleccionada: state.canchaSeleccionada.turnos.map(turno => {
+                if (turno.id == action.id) {
+                   return turno.alquilado = true
+                }
+            })
+        };
         default:
             return state;
     }
