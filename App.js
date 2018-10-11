@@ -6,6 +6,17 @@ import SignUp from './src/Screens/SignUp/SignUp';
 import Reservas from './src/Screens/Reservas/Reservas';
 import { Provider } from 'react-redux';
 import configureStore from './src/store/configureStore';
+import firebase from 'firebase';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCBOrFJqatsgzm0kvT87liAqxBkfcy7TcA",
+  authDomain: "tu-canchita.firebaseapp.com",
+  databaseURL: "https://tu-canchita.firebaseio.com",
+  projectId: "tu-canchita",
+  storageBucket: "tu-canchita.appspot.com",
+  messagingSenderId: "847113784299"
+};
+firebase.initializeApp(firebaseConfig);
 
 const store = configureStore();
 
