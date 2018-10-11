@@ -15,18 +15,20 @@ class Perfil extends Component {
     var user = firebase.auth().currentUser;
     return (
       <View style={styles.fondo}>
-          <Avatar
-            size="xlarge"
-            rounded
-            source={{uri: user.photoURL}}
-            title="IM"
-          />
-          <Text style={{fontSize: 18, color: 'black'}}>{user.displayName}</Text>
-          <Text style={{fontSize: 18, color: 'black'}}>{user.email}</Text>
-          <Button
-          title="Cerrar sesión" 
-          onPress={() => this.handleLogOut}
+        <Avatar
+          xlarge
+          rounded
+          source={{uri: user.photoURL}}
+          title="IM"
         />
+        <Text style={{fontSize: 18, color: 'black', marginTop: 10}}>{user.displayName}</Text>
+        <Text style={{fontSize: 18, color: 'black', marginTop: 10}}>{user.email}</Text>
+        <View style={{bottom: 15, position: 'absolute'}}>    
+          <Button
+            title="Cerrar sesión" 
+            onPress={() => this.handleLogOut}
+          />
+        </View>
       </View>
     )
   }

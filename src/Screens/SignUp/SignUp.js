@@ -9,10 +9,11 @@ class SignUp extends Component {
   state = {
     email: "",
     password: "",
-    passwordConfirmacion: ""
+    passwordConfirmacion: "",
+    nombre: ""
   }
   
-  onSignUp = (email, password, passwordConfirmacion) => {
+  onSignUp = (email, password) => {
     if (this.state.password.length < 6) {
       alert("Please, enter at least 6 characters");
       return;
@@ -20,9 +21,15 @@ class SignUp extends Component {
     if (this.state.password !== this.state.passwordConfirmacion) {
       alert("Las contraseñas no coinciden")
       return;
+    if (this.state.nombre === "") {
+      alert("Debe ingresar un nombre completo")
+    }
     }
     firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() => {startMainTabs()})
+    .then(() => {
+      firebase.auth().currentUser.updateProfile({displayName: this.state.nombre})
+      startMainTabs()
+    })
     .catch(error => {alert(error)})
   }
 
@@ -41,14 +48,18 @@ class SignUp extends Component {
           secureTextEntry={true}
         />
         <TextInput 
-          placeholder="Repetir" 
+          placeholder="Repetir contraseña" 
           textContentType="password" 
           onChangeText={passwordConfirmacion => this.setState({passwordConfirmacion})} 
           secureTextEntry={true}
         />
+        <TextInput
+          placeholder="Nombre y apellido"
+          onChangeText={nombre => this.setState({nombre})}
+        />
         <Button 
           title="Crear usuario" 
-          onPress={() => this.onSignUp(this.state.email, this.state.password, this.state.passwordConfirmacion)}
+          onPress={() => this.onSignUp(this.state.email, this.state.password)}
         />
       </View>
     )
