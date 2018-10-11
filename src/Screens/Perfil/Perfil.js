@@ -1,18 +1,32 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
 import { Avatar } from 'react-native-elements';
+import firebase from 'firebase';
+
 
 class Perfil extends Component {
+  handleLogOut = () => {
+    firebase.auth().signOut()
+    .then(() => {/*Esto funciona, pero tendría que redirigir al screen de Auth*/})
+    .catch(error => alert(error))
+  }
+
   render() {
+    var user = firebase.auth().currentUser;
     return (
       <View style={styles.fondo}>
           <Avatar
             size="xlarge"
             rounded
-            //source={{uri: "https://www.patchcollection.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/s/p/spiderman_extra_large_logo.jpg"}}
+            source={{uri: user.photoURL}}
             title="IM"
           />
-          <Text style={{fontSize: 18, color: 'black'}}>Ignacio Macías</Text>
+          <Text style={{fontSize: 18, color: 'black'}}>{user.displayName}</Text>
+          <Text style={{fontSize: 18, color: 'black'}}>{user.email}</Text>
+          <Button
+          title="Cerrar sesión" 
+          onPress={() => this.handleLogOut}
+        />
       </View>
     )
   }
