@@ -24,7 +24,7 @@ export default class Auth extends Component {
   };
 
   loginConFacebookHandler = () => {
-    alert("test fb")
+    alert("Poronguita")
   }
 
   loginConGoogleHandler = () => {
