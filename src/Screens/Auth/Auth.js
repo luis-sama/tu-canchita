@@ -4,6 +4,7 @@ import Dimensions from 'Dimensions';
 import startMainTabs from '../MainTabs/startMainTabs';
 import firebase from 'firebase';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import fbsdk, { LoginManager } from 'react-native-fbsdk';
 
 const ANCHO_PANTALLA = Dimensions.get('window').width;
 
@@ -24,7 +25,16 @@ export default class Auth extends Component {
   };
 
   loginConFacebookHandler = () => {
-    alert("Poronguita")
+    LoginManager.logInWithReadPermissions(['public_profile'])
+    .then(function(result) {
+      if (result.isCancelled) {
+        alert('Login cancelado');
+      } else {
+        () => startMainTabs()
+      }
+    }, function(error) {
+      alert('Ocurrió un error: ' + error)
+    })
   }
 
   loginConGoogleHandler = () => {
@@ -64,7 +74,11 @@ export default class Auth extends Component {
           <Button title='Creá una cuenta' onPress={this.signuphandler} style={{flex:1}}/>
         </View>
         <View style={{marginTop: 70}}>
-          <Icon.Button name="facebook-box" backgroundColor="#3b5998" onPress={this.loginConFacebookHandler}>
+          <Icon.Button 
+            name="facebook-box" 
+            backgroundColor="#3b5998" 
+            onPress={this.loginConFacebookHandler}
+          >
             Ingresá con Facebook
           </Icon.Button>
         </View>
