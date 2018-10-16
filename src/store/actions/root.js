@@ -1,4 +1,4 @@
-import { SELECCIONAR_CANCHA, OCULTAR_MODAL_CANCHA, BUSCAR_CANCHA, CARGAR_CANCHAS_FILTRADAS, SELECCIONAR_TURNO, DESELECCIONAR_TURNO } from './actionTypes';
+import { SELECCIONAR_CANCHA, OCULTAR_MODAL_CANCHA, BUSCAR_CANCHA, CARGAR_CANCHAS_FILTRADAS, SELECCIONAR_TURNO, TRAER_CANCHAS } from './actionTypes';
 
 export const buscarCancha = nombre => {
     return {
@@ -30,5 +30,11 @@ export const seleccionarTurno = id => {
     return {
         type: SELECCIONAR_TURNO,
         id
+    }
+}
+
+export const traerCanchas = () => {
+    return {
+        type: TRAER_CANCHAS,
     }
 }

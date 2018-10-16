@@ -4,9 +4,11 @@ import { SearchBar } from 'react-native-elements';
 import CanchaDetalle from '../../Components/CanchaDetalle/CanchaDetalle';
 import ListaCanchas from '../../Components/ListaCanchas/ListaCanchas';
 import { connect } from 'react-redux';
-import { seleccionarCancha, ocultarModalCancha, buscarCancha, cargarCanchasFiltradas } from '../../store/actions/index'
+import { seleccionarCancha, ocultarModalCancha, buscarCancha, cargarCanchasFiltradas, traerCanchas } from '../../store/actions/index';
 
 class Busqueda extends Component {
+
+
   canchaSeleccionadaHandler = id => {
     this.props.seleccionarCancha(id)
   }
@@ -62,6 +64,7 @@ const mapDispatchToProps = dispatch => {
     ocultarModalCancha: () => dispatch(ocultarModalCancha()),
     buscarCancha: nombre => dispatch(buscarCancha(nombre)),
     cargarCanchasFiltradas: () => dispatch(cargarCanchasFiltradas()),
+    traerCanchas: () => dispatch(traerCanchas()),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Busqueda);
