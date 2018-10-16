@@ -9,7 +9,8 @@ import configureStore from './src/store/configureStore';
 import firebase from 'firebase';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCBOrFJqatsgzm0kvT87liAqxBkfcy7TcA",
+  // apiKey: "AIzaSyCBOrFJqatsgzm0kvT87liAqxBkfcy7TcA",
+  apiKey: 'AIzaSyAwC_LjaKA4kZydmdCzussDJy6hYW0g1rQ',
   authDomain: "tu-canchita.firebaseapp.com",
   databaseURL: "https://tu-canchita.firebaseio.com",
   projectId: "tu-canchita",

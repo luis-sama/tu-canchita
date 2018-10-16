@@ -4,7 +4,7 @@ import Dimensions from 'Dimensions';
 import startMainTabs from '../MainTabs/startMainTabs';
 import firebase from 'firebase';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import fbsdk, { LoginManager } from 'react-native-fbsdk';
+import { AccessToken, LoginManager } from 'react-native-fbsdk';
 
 const ANCHO_PANTALLA = Dimensions.get('window').width;
 
@@ -26,19 +26,45 @@ export default class Auth extends Component {
 
   loginConFacebookHandler = () => {
     LoginManager.logInWithReadPermissions(['public_profile'])
-    .then(function(result) {
+    .then(result => {
       if (result.isCancelled) {
-        alert('Login cancelado');
-      } else {
-        () => startMainTabs()
+        console.log('Cancelado')
+        return Promise.reject(new Error('The user cancelled the request'));
       }
-    }, function(error) {
-      alert('Ocurrió un error: ' + error)
+      console.log(`Login success with permissions: ${result.grantedPermissions.toString()}`);
+      return AccessToken.getCurrentAccessToken();
+    })
+    .then(data => {
+      const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);      
+      return firebase.auth().signInWithCredential(credential);
+    })
+    .then(currentUser => {
+      console.log(`Facebook Login with user : ${JSON.stringify(currentUser.toJSON())}`);
+      () => {startMainTabs()}
+    })
+    .catch(error => {
+      console.log(`Login con facebook falló con error: ${error}`);
     })
   }
 
+  // loginConFacebookHandler = () => {
+  //   LoginManager.logInWithReadPermissions(['public_profile']).then(
+  //     function(result) {
+  //       if (result.isCancelled) {
+  //         console.log('Login cancelled');
+  //       } else {
+  //         console.log('Login success with permissions: '
+  //           +result.grantedPermissions.toString());
+  //       }
+  //     },
+  //     function(error) {
+  //       console.log('Login fail with error: ' + error);
+  //     }
+  //   );
+  // }
+
   loginConGoogleHandler = () => {
-    alert("test google")
+    console.log('P11')
   }
 
   signuphandler = () => {
