@@ -5,10 +5,12 @@ import startMainTabs from '../MainTabs/startMainTabs';
 import firebase from 'firebase';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import fbsdk, { LoginManager } from 'react-native-fbsdk';
+import { connect } from 'react-redux';
+import { traerCanchas } from '../../store/actions/index';
 
 const ANCHO_PANTALLA = Dimensions.get('window').width;
 
-export default class Auth extends Component {
+class Auth extends Component {
   static navigatorStyle = {
     navBarHidden: true,
   };
@@ -18,6 +20,31 @@ export default class Auth extends Component {
     password: ""
   }
   
+  async componentDidMount() {
+    var dbCanchas = firebase.database().ref().child('canchas');
+    dbCanchas.on('child_added', data => {
+      let turnoAdd = [];
+      var dbTurnos = firebase.database().ref().child(`canchas/${data.key}`).child('turnos');
+      dbTurnos.on('child_added', turno => {
+        turnoAdd = [...turnoAdd, {
+          id: turno.key,
+          fecha: turno.val().fecha, 
+          horario: turno.val().horario, 
+          alquilado: turno.val().alquilado
+          }]
+        })
+      this.props.canchas.push({
+        id: data.key,
+        nombre: data.val().nombre,
+        imagen: data.val().imagen,
+        precio: data.val().precio,
+        puntaje: data.val().puntaje,
+        turnos: turnoAdd,
+        ubicacion: data.val().ubicacion
+      })
+    })
+  }
+
   loginUsuarioYContraseñaHandler = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {startMainTabs()})
@@ -38,8 +65,10 @@ export default class Auth extends Component {
   }
 
   loginConGoogleHandler = () => {
-    alert("test google")
-  }
+    this.props.canchas.map(cancha => {
+        alert(`La cancha ${cancha.id} tiene: ${cancha.turnos.length} turnos`)
+      })
+    }
 
   signuphandler = () => {
     this.props.navigator.push({
@@ -116,4 +145,22 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     margin: 15
   }
-});
+})
+
+const mapStateToProps = state => {
+  return {
+    //comolollamo: state.(configurestore).(reducers/root.js)
+    canchas: state.canchas.canchas,
+    canchasFiltradas: state.canchas.canchasFiltradas,
+    canchaSeleccionada: state.canchas.canchaSeleccionada
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    //comolollamo: () => dispatch(actions/index.js)
+    traerCanchas: () => dispatch(traerCanchas()),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);

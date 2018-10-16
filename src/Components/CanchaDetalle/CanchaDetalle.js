@@ -8,14 +8,14 @@ import { seleccionarTurno } from '../../store/actions/index'
 class CanchaDetalle extends Component {
 
   turnoSelectedHandler = id => {
-    this.setState(
-      this.props.canchaSeleccionada.turnos.map(turno => {
-        if (turno.id == id) (
-          turno.alquilado = true
-        )
-      })
-    )
-    // this.props.seleccionarTurno(id);
+    // this.setState(
+    //   this.props.canchaSeleccionada.turnos.map(turno => {
+    //     if (turno.id == id) (
+    //       turno.alquilado = true
+    //     )
+    //   })
+    // )
+    this.props.seleccionarTurno(id);
   };
   
   render() {
