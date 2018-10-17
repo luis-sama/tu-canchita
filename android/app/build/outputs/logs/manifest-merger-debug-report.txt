@@ -23,17 +23,17 @@ MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Luis\.gradle\caches\tran
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\16665964da767249356372b85655b398\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\a2834f2fe3d7958def2780770b603e82\AndroidManifest.xml:1:1-4:12
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\a69662d396e1a4cb834d2985db59d182\AndroidManifest.xml:1:1-3:12
+MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\68e386a6f344bdeb3c1c057a84241133\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\2b51c37083bcd13a40ff9cec976b66c8\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-messenger:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.34.0.aar\36202d134e1a9a1b74c40abfc4f9518e\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\06c8af34678c2cdfea7cc75c680e2c28\AndroidManifest.xml:21:1-35:12
+MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\d8660d9d85c44e0dde1466873c85fbb8\AndroidManifest.xml:21:1-53:12
 MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\b192e38fba7f1c08fd03d03b1943fc03\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\0f7d17064eed7d9ba9490f999232b56a\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\5ae5ac6421ccf95ae20085ad3e4a8e78\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\c6e148bf373faeaf53cd560ada3811f3\AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\a8bb4e33847b2b3824d8441092e53952\AndroidManifest.xml:17:1-26:12
 MERGED from [com.balysv.materialmenu:material-menu:1.5.4] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\material-menu-1.5.4.aar\511ff131c7e4239cf32f53c2cb49ae71\AndroidManifest.xml:2:1-14:12
-MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\68e386a6f344bdeb3c1c057a84241133\AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\2b51c37083bcd13a40ff9cec976b66c8\AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-messenger:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.34.0.aar\36202d134e1a9a1b74c40abfc4f9518e\AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\06c8af34678c2cdfea7cc75c680e2c28\AndroidManifest.xml:21:1-35:12
-MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\d8660d9d85c44e0dde1466873c85fbb8\AndroidManifest.xml:21:1-53:12
 MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\191ef55bdecacddff933b159c27fd2eb\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\29131ccf5d2251dd2509ef280ac12f01\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\604d294161eb3ce8fac8253f391ce170\AndroidManifest.xml:17:1-22:12
@@ -99,8 +99,6 @@ MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Luis\.gradle\caches\
 MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\a2834f2fe3d7958def2780770b603e82\AndroidManifest.xml:3:3-17
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\a69662d396e1a4cb834d2985db59d182\AndroidManifest.xml:2:3-17
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\a69662d396e1a4cb834d2985db59d182\AndroidManifest.xml:2:3-17
-MERGED from [com.balysv.materialmenu:material-menu:1.5.4] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\material-menu-1.5.4.aar\511ff131c7e4239cf32f53c2cb49ae71\AndroidManifest.xml:12:5-20
-MERGED from [com.balysv.materialmenu:material-menu:1.5.4] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\material-menu-1.5.4.aar\511ff131c7e4239cf32f53c2cb49ae71\AndroidManifest.xml:12:5-20
 MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\68e386a6f344bdeb3c1c057a84241133\AndroidManifest.xml:28:5-29:19
 MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\68e386a6f344bdeb3c1c057a84241133\AndroidManifest.xml:28:5-29:19
 MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\2b51c37083bcd13a40ff9cec976b66c8\AndroidManifest.xml:28:5-29:19
@@ -111,6 +109,8 @@ MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\Luis\.grad
 MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\06c8af34678c2cdfea7cc75c680e2c28\AndroidManifest.xml:28:5-33:19
 MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\d8660d9d85c44e0dde1466873c85fbb8\AndroidManifest.xml:28:5-51:19
 MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\d8660d9d85c44e0dde1466873c85fbb8\AndroidManifest.xml:28:5-51:19
+MERGED from [com.balysv.materialmenu:material-menu:1.5.4] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\material-menu-1.5.4.aar\511ff131c7e4239cf32f53c2cb49ae71\AndroidManifest.xml:12:5-20
+MERGED from [com.balysv.materialmenu:material-menu:1.5.4] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\material-menu-1.5.4.aar\511ff131c7e4239cf32f53c2cb49ae71\AndroidManifest.xml:12:5-20
 	android:supportsRtl
 		ADDED from [com.facebook.android:facebook-android-sdk:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.34.0.aar\5bf23afb192ee5aa8ca280d87ad09d6e\AndroidManifest.xml:28:18-44
 	android:label
@@ -197,6 +197,16 @@ MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\Luis\.gra
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\16665964da767249356372b85655b398\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\a2834f2fe3d7958def2780770b603e82\AndroidManifest.xml:2:3-70
 MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\a2834f2fe3d7958def2780770b603e82\AndroidManifest.xml:2:3-70
+MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\68e386a6f344bdeb3c1c057a84241133\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\68e386a6f344bdeb3c1c057a84241133\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\2b51c37083bcd13a40ff9cec976b66c8\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\2b51c37083bcd13a40ff9cec976b66c8\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-messenger:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.34.0.aar\36202d134e1a9a1b74c40abfc4f9518e\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-messenger:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.34.0.aar\36202d134e1a9a1b74c40abfc4f9518e\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\06c8af34678c2cdfea7cc75c680e2c28\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\06c8af34678c2cdfea7cc75c680e2c28\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\d8660d9d85c44e0dde1466873c85fbb8\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\d8660d9d85c44e0dde1466873c85fbb8\AndroidManifest.xml:24:5-26:41
 MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\b192e38fba7f1c08fd03d03b1943fc03\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\b192e38fba7f1c08fd03d03b1943fc03\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\0f7d17064eed7d9ba9490f999232b56a\AndroidManifest.xml:5:5-7:41
@@ -209,16 +219,6 @@ MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\Luis\.gradle\c
 MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\a8bb4e33847b2b3824d8441092e53952\AndroidManifest.xml:20:5-43
 MERGED from [com.balysv.materialmenu:material-menu:1.5.4] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\material-menu-1.5.4.aar\511ff131c7e4239cf32f53c2cb49ae71\AndroidManifest.xml:8:5-10:41
 MERGED from [com.balysv.materialmenu:material-menu:1.5.4] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\material-menu-1.5.4.aar\511ff131c7e4239cf32f53c2cb49ae71\AndroidManifest.xml:8:5-10:41
-MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\68e386a6f344bdeb3c1c057a84241133\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\68e386a6f344bdeb3c1c057a84241133\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\2b51c37083bcd13a40ff9cec976b66c8\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\2b51c37083bcd13a40ff9cec976b66c8\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-messenger:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.34.0.aar\36202d134e1a9a1b74c40abfc4f9518e\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-messenger:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.34.0.aar\36202d134e1a9a1b74c40abfc4f9518e\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\06c8af34678c2cdfea7cc75c680e2c28\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\06c8af34678c2cdfea7cc75c680e2c28\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\d8660d9d85c44e0dde1466873c85fbb8\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\d8660d9d85c44e0dde1466873c85fbb8\AndroidManifest.xml:24:5-26:41
 MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\191ef55bdecacddff933b159c27fd2eb\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\191ef55bdecacddff933b159c27fd2eb\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Luis\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\29131ccf5d2251dd2509ef280ac12f01\AndroidManifest.xml:20:5-44

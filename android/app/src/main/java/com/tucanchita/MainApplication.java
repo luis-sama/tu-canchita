@@ -15,8 +15,9 @@ import java.util.List;
 import com.reactnativenavigation.NavigationApplication;
 import com.oblador.vectoricons.VectorIconsPackage;
 
-import com.facebook.FacebookSdk;
 import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.appevents.AppEventsLogger;
 
 
@@ -78,4 +79,10 @@ public class MainApplication extends NavigationApplication {
   public List<ReactPackage> createAdditionalReactPackages() {
       return getPackages();
   }
+
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		AppEventsLogger.activateApp(this);
+	}
 }
