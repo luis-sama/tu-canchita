@@ -4,15 +4,9 @@ import Dimensions from 'Dimensions';
 import startMainTabs from '../MainTabs/startMainTabs';
 import firebase from 'firebase';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-<<<<<<< HEAD
 import { AccessToken, LoginManager } from 'react-native-fbsdk';
-||||||| merged common ancestors
-import fbsdk, { LoginManager } from 'react-native-fbsdk';
-=======
-import fbsdk, { LoginManager } from 'react-native-fbsdk';
 import { connect } from 'react-redux';
 import { traerCanchas } from '../../store/actions/index';
->>>>>>> 3e6c1bebae102741ba8dac86a2d0cac3ef350487
 
 const ANCHO_PANTALLA = Dimensions.get('window').width;
 
@@ -51,107 +45,38 @@ class Auth extends Component {
     })
   }
 
-  loginUsuarioYContraseñaHandler = (email, password) => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => {startMainTabs()})
-    .catch(error => {alert(error)})
-  };
-
-  loginConFacebookHandler = () => {
-    LoginManager.logInWithReadPermissions(['public_profile'])
-    .then(result => {
-      if (result.isCancelled) {
-        console.log('Cancelado')
-        return Promise.reject(new Error('The user cancelled the request'));
+  facebookLogin = async () =>{
+    LoginManager.logInWithReadPermissions(['public_profile']).then(
+       function(result) {
+        if (result.isCancelled) {
+          console.log('Login cancelled');
+        } else {
+          console.log('Login success with permissions: '
+            +result.grantedPermissions.toString());
+        }
+      },
+      function(error) {
+        console.log('Login fail with error: ' + error);
       }
-      console.log(`Login success with permissions: ${result.grantedPermissions.toString()}`);
-      return AccessToken.getCurrentAccessToken();
-    })
-    .then(data => {
-      const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);      
-      return firebase.auth().signInWithCredential(credential);
-    })
-    .then(currentUser => {
-      console.log(`Facebook Login with user : ${JSON.stringify(currentUser.toJSON())}`);
-      () => {startMainTabs()}
-    })
-    .catch(error => {
-      console.log(`Login con facebook falló con error: ${error}`);
-    })
-  }
-
-  // loginConFacebookHandler = () => {
-  //   LoginManager.logInWithReadPermissions(['public_profile']).then(
-  //     function(result) {
-  //       if (result.isCancelled) {
-  //         console.log('Login cancelled');
-  //       } else {
-  //         console.log('Login success with permissions: '
-  //           +result.grantedPermissions.toString());
-  //       }
-  //     },
-  //     function(error) {
-  //       console.log('Login fail with error: ' + error);
-  //     }
-  //   );
-  // }
-
-  loginConGoogleHandler = () => {
-    this.props.canchas.map(cancha => {
-        alert(`La cancha ${cancha.id} tiene: ${cancha.turnos.length} turnos`)
-      })
-    }
-
-  signuphandler = () => {
-    this.props.navigator.push({
-      screen: 'miApp.SignUpScreen',
-    });
+    );
   }
 
   render() {
     return (
       <ImageBackground source={require('../../Imagenes/canchita.jpg')} style={styles.fondo}>
-        <Image source={require('../../Imagenes/logo.png')}/>
-        <View style={styles.formulario}>
-          <TextInput 
-            style={styles.input} 
-            placeholder="Email"
-            onChangeText={email => this.setState({email})}  
-          >
-          </TextInput>
-          <TextInput 
-            style={styles.input} secureTextEntry={true} 
-            placeholder="Contraseña"
-            onChangeText={password => this.setState({password})}
-          >
-          </TextInput>
-          <View style={{marginBottom: 10, marginTop: 10}}>
-            <Button 
-              title='Iniciá sesión' 
-              onPress={() => this.loginUsuarioYContraseñaHandler(this.state.email, this.state.password)} 
-              style={{flex:1}}
-            />
-          </View>
-          <Button title='Creá una cuenta' onPress={this.signuphandler} style={{flex:1}}/>
-        </View>
         <View style={{marginTop: 70}}>
           <Icon.Button 
             name="facebook-box" 
             backgroundColor="#3b5998" 
-            onPress={this.loginConFacebookHandler}
+            onPress={this.facebookLogin}
           >
             Ingresá con Facebook
-          </Icon.Button>
-        </View>
-        <View style={{marginTop: 10}}>
-          <Icon.Button name="google-plus" backgroundColor="red" onPress={this.loginConGoogleHandler}>
-            Ingresá con Google
           </Icon.Button>
         </View>
       </ImageBackground>
     );
   }
-}
+};
 
 
 const styles = StyleSheet.create({
