@@ -1,4 +1,4 @@
-#Fri Oct 19 13:40:43 ART 2018
+#Fri Oct 19 14:21:26 ART 2018
 base.0=C\:\\Users\\Luis\\Documents\\Facu\\4\\Metodologias Agiles\\tu-canchita\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
