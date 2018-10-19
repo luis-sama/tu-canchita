@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { AccessToken, LoginManager } from 'react-native-fbsdk';
 import { connect } from 'react-redux';
 import { traerCanchas } from '../../store/actions/index';
+import { GoogleSignin, statusCodes } from 'react-native-google-signin';
 
 const ANCHO_PANTALLA = Dimensions.get('window').width;
 
@@ -20,6 +21,17 @@ class Auth extends Component {
     password: ""
   }
   
+  componentWillMount() {
+    GoogleSignin.configure({
+      scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
+      webClientId: '847113784299-9a0bm73k3nnk8asd3ic43rnh9ffevfkq.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
+      // offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
+      // hostedDomain: '', // specifies a hosted domain restriction
+      // forceConsentPrompt: true, // [Android] if you want to show the authorization prompt at each login
+      //accountName: '', // [Android] specifies an account name on the device that should be used
+    });    
+  }
+
   async componentDidMount() {
     var dbCanchas = firebase.database().ref().child('canchas');
     dbCanchas.on('child_added', data => {
@@ -45,32 +57,98 @@ class Auth extends Component {
     })
   }
 
-  facebookLogin = async () =>{
-    LoginManager.logInWithReadPermissions(['public_profile']).then(
-       function(result) {
-        if (result.isCancelled) {
-          console.log('Login cancelled');
-        } else {
-          console.log('Login success with permissions: '
-            +result.grantedPermissions.toString());
-        }
-      },
-      function(error) {
-        console.log('Login fail with error: ' + error);
+  loginUsuarioYContraseñaHandler = (email, password) => {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {startMainTabs()})
+    .catch(error => {alert(error)})
+  };
+
+  loginConFacebookHandler = () => {
+    LoginManager.logInWithReadPermissions(['public_profile'])
+    .then(result => {
+      if (result.isCancelled) {
+        console.log('Cancelado')
+        return Promise.reject(new Error('The user cancelled the request'));
       }
-    );
+      console.log(`Login success with permissions: ${result.grantedPermissions.toString()}`);
+      return AccessToken.getCurrentAccessToken();
+    })
+    .then(data => {
+      const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);      
+      return firebase.auth().signInWithCredential(credential);
+    })
+    .then(currentUser => {
+      console.log(`Facebook Login with user : ${JSON.stringify(currentUser.toJSON())}`);
+      () => {startMainTabs()}
+    })
+    .catch(error => {
+      console.log(`Login con facebook falló con error: ${error}`);
+    })
+  }
+
+  
+  loginConGoogleHandler = async () => {
+    GoogleSignin
+      .signIn()
+      .then((data) => {
+          // create a new firebase credential with the token
+          const credential = firebase.auth.GoogleAuthProvider.credential(data.idToken, data.accessToken);
+          // login with credential
+          return firebase.auth().signInWithCredential(credential);
+      })
+      .then((currentUser) => {
+          console.log(`Google Login with user : ${JSON.stringify(currentUser.toJSON())}`);
+      })
+      .catch((error) => {
+          console.log(`Login fail with error: ${error}`);
+      });
+
+  };
+
+  signuphandler = () => {
+    this.props.navigator.push({
+      screen: 'miApp.SignUpScreen',
+    });
   }
 
   render() {
     return (
       <ImageBackground source={require('../../Imagenes/canchita.jpg')} style={styles.fondo}>
+        <Image source={require('../../Imagenes/logo.png')}/>
+        <View style={styles.formulario}>
+          <TextInput 
+            style={styles.input} 
+            placeholder="Email"
+            onChangeText={email => this.setState({email})}  
+          >
+          </TextInput>
+          <TextInput 
+            style={styles.input} secureTextEntry={true} 
+            placeholder="Contraseña"
+            onChangeText={password => this.setState({password})}
+          >
+          </TextInput>
+          <View style={{marginBottom: 10, marginTop: 10}}>
+            <Button 
+              title='Iniciá sesión' 
+              onPress={() => this.loginUsuarioYContraseñaHandler(this.state.email, this.state.password)} 
+              style={{flex:1}}
+            />
+          </View>
+          <Button title='Creá una cuenta' onPress={this.signuphandler} style={{flex:1}}/>
+        </View>
         <View style={{marginTop: 70}}>
           <Icon.Button 
             name="facebook-box" 
             backgroundColor="#3b5998" 
-            onPress={this.facebookLogin}
+            onPress={this.loginConFacebookHandler}
           >
             Ingresá con Facebook
+          </Icon.Button>
+        </View>
+        <View style={{marginTop: 10}}>
+          <Icon.Button name="google-plus" backgroundColor="red" onPress={this.loginConGoogleHandler}>
+            Ingresá con Google
           </Icon.Button>
         </View>
       </ImageBackground>

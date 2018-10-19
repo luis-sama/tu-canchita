@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Oct 17 18:14:08 ART 2018
+#Thu Oct 18 21:54:12 ART 2018
 17.baseType=DIRECTORY
 4.path=lib/armeabi-v7a/libfb.so
 25.base=C\:\\Users\\Luis\\Documents\\Facu\\4\\Metodologias Agiles\\tu-canchita\\android\\app\\build\\intermediates\\assets\\debug

@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Luis\\Documents\\Facu\\4\\Metodologias Agiles\\tu-canchita\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt\\values-pt.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Luis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\52cce7cb49e265360fc9b037a474bf3a\\res\\values-pt\\values-pt.xml",
+                    "source": "C:\\Users\\Luis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\5d4cbdfb56fb440df15e1624a4ce722c\\res\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Luis\\.gradle\\caches\\transforms-1\\files-1.1\\facebook-login-4.34.0.aar\\33f86111eea857124f3d465a433d263b\\res\\values-pt\\values-pt.xml",
+                    "source": "C:\\Users\\Luis\\.gradle\\caches\\transforms-1\\files-1.1\\facebook-login-4.34.0.aar\\32f1d5d599aeb919f8c59109060fe783\\res\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Luis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\45456f5f20abbf3ce400ab3620f5c16c\\res\\values-pt\\values-pt.xml",
+                    "source": "C:\\Users\\Luis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\00ffaaf1fc789e9e2b6cc8765031ff40\\res\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

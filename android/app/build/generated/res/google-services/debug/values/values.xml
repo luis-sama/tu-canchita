@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">847113784299-br38p5o64b5mj2kogl8mv7f8ldof5odb.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://tu-canchita.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">847113784299</string>
+    <string name="google_api_key" translatable="false">AIzaSyCPZXQmq7GEcW78zQgPITKgK42MwmMt-x4</string>
+    <string name="google_app_id" translatable="false">1:847113784299:android:dc12afce4b2e5e38</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCPZXQmq7GEcW78zQgPITKgK42MwmMt-x4</string>
+    <string name="google_storage_bucket" translatable="false">tu-canchita.appspot.com</string>
+    <string name="project_id" translatable="false">tu-canchita</string>
+</resources>

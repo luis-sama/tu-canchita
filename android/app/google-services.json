@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "847113784299",
+    "firebase_url": "https://tu-canchita.firebaseio.com",
+    "project_id": "tu-canchita",
+    "storage_bucket": "tu-canchita.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847113784299:android:dc12afce4b2e5e38",
+        "android_client_info": {
+          "package_name": "com.tucanchita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847113784299-9a0bm73k3nnk8asd3ic43rnh9ffevfkq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tucanchita",
+            "certificate_hash": "e7417b6a8fc2c376af7b14e39f9982c6c555ce7e"
+          }
+        },
+        {
+          "client_id": "847113784299-br38p5o64b5mj2kogl8mv7f8ldof5odb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPZXQmq7GEcW78zQgPITKgK42MwmMt-x4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847113784299-br38p5o64b5mj2kogl8mv7f8ldof5odb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

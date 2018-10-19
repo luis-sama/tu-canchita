@@ -3,6 +3,7 @@ package com.tucanchita;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -32,7 +33,8 @@ public class MainApplication extends NavigationApplication {
   //   @Override
   //   protected List<ReactPackage> getPackages() {
   //     return Arrays.<ReactPackage>asList(
-  //         new MainReactPackage(),
+  //         new MainReactPackage(),            
+            // new RNGoogleSigninPackage(),
   //         new FBSDKPackage()
   //     );
   //   }
@@ -71,7 +73,8 @@ public class MainApplication extends NavigationApplication {
       return Arrays.<ReactPackage>asList(
           // eg. new VectorIconsPackage()
           new VectorIconsPackage(),
-          new FBSDKPackage(mCallbackManager)
+          new FBSDKPackage(mCallbackManager),
+          new RNGoogleSigninPackage()
       );
   }
 
