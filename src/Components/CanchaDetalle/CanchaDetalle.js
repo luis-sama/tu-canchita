@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
 import { Modal, View, Image, Text, Button, StyleSheet, ScrollView } from 'react-native';
-
+import firebase from 'firebase';
 import ListaTurnos from '../ListaTurnos/ListaTurnos';
 import { connect } from 'react-redux';
 import { seleccionarTurno } from '../../store/actions/index'
 
 class CanchaDetalle extends Component {
+  state = {
+    comodin: null
+  }
 
   turnoSelectedHandler = id => {
-    // this.setState(
-    //   this.props.canchaSeleccionada.turnos.map(turno => {
-    //     if (turno.id == id) (
-    //       turno.alquilado = true
-    //     )
-    //   })
-    // )
-    this.props.seleccionarTurno(id);
+    const { canchaSeleccionada } = this.props
+    var dbTurno = firebase.database().ref().child(`canchas/${canchaSeleccionada.id}/turnos/${id}`)
+    dbTurno.update({alquilado: true})
+    .then(this.setState({comodin: '-'}))
+
+    // this.props.seleccionarTurno(id);
   };
+
+  componentDidUpdate() {
+    const { canchaSeleccionada } = this.props
+    if (canchaSeleccionada) {
+      var dbTurnos = firebase.database().ref().child(`canchas/${canchaSeleccionada.id}/turnos`)
+      dbTurnos.on('child_changed', snap => {
+        canchaSeleccionada.turnos.map(turno => {
+          if (turno.id == snap.key) {
+            turno.alquilado = snap.val().alquilado
+          }
+        })
+      })
+    }
+  }
   
   render() {
     let modalContent = null;
