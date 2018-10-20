@@ -1,1 +1,1 @@
-export { seleccionarCancha, ocultarModalCancha, buscarCancha, cargarCanchasFiltradas, seleccionarTurno, traerCanchas } from './root';
+export { seleccionarCancha, ocultarModalCancha, buscarCancha, cargarCanchasFiltradas, seleccionarTurno, traerCanchas, buscarCanchaPrecio } from './root';

@@ -1,10 +1,17 @@
-import { SELECCIONAR_CANCHA, OCULTAR_MODAL_CANCHA, BUSCAR_CANCHA, CARGAR_CANCHAS_FILTRADAS, SELECCIONAR_TURNO, TRAER_CANCHAS } from './actionTypes';
+import { SELECCIONAR_CANCHA, OCULTAR_MODAL_CANCHA, BUSCAR_CANCHA, CARGAR_CANCHAS_FILTRADAS, SELECCIONAR_TURNO, TRAER_CANCHAS, BUSCAR_CANCHA_PRECIO } from './actionTypes';
 
 export const buscarCancha = nombre => {
     return {
         type: BUSCAR_CANCHA,
         nombre: nombre
-    };
+    }
+}
+
+export const buscarCanchaPrecio = precio => {
+    return {
+        type: BUSCAR_CANCHA_PRECIO,
+        precio: precio
+    }
 }
 
 export const seleccionarCancha = id => {
@@ -20,11 +27,9 @@ export const ocultarModalCancha = () => {
     }
 }
 
-export const cargarCanchasFiltradas = (precioMin, precioMax) => {
+export const cargarCanchasFiltradas = () => {
     return {
-        type: CARGAR_CANCHAS_FILTRADAS,
-        precioMin,
-        precioMax
+        type: CARGAR_CANCHAS_FILTRADAS
     }
 }
 

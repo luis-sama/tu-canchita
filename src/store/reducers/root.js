@@ -1,11 +1,11 @@
-import firebase from "firebase";
+
 import {
   SELECCIONAR_CANCHA,
   OCULTAR_MODAL_CANCHA,
   BUSCAR_CANCHA,
   CARGAR_CANCHAS_FILTRADAS,
   SELECCIONAR_TURNO,
-  TRAER_CANCHAS
+  BUSCAR_CANCHA_PRECIO,
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -38,10 +38,15 @@ const reducer = (state = initialState, action) => {
     case CARGAR_CANCHAS_FILTRADAS:
       return {
         ...state,
-        canchasFiltradas: state.canchas.filter(cancha => {
-          return (action.precioMin <= cancha.precio && cancha.precio <= action.precioMax)
-        })
+        canchasFiltradas: state.canchas
       };
+    case BUSCAR_CANCHA_PRECIO:
+      return {
+        ...state,
+        canchasFiltradas: state.canchas.filter(cancha => {
+          return cancha.precio.indexOf(action.precio) > -1;
+        })
+      }
     case SELECCIONAR_TURNO:
       return {
         ...state,
