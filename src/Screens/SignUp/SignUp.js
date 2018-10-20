@@ -15,7 +15,7 @@ class SignUp extends Component {
   
   onSignUp = (email, password) => {
     if (this.state.password.length < 6) {
-      alert("Please, enter at least 6 characters");
+      alert("Debe escribir al menos 6 caracteres");
       return;
     }
     if (this.state.password !== this.state.passwordConfirmacion) {
