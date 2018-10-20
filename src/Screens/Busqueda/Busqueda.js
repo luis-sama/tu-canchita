@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View } from 'react-native';
+import { View, TextInput, Button } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import CanchaDetalle from '../../Components/CanchaDetalle/CanchaDetalle';
 import ListaCanchas from '../../Components/ListaCanchas/ListaCanchas';
@@ -8,6 +8,11 @@ import { seleccionarCancha, ocultarModalCancha, buscarCancha, cargarCanchasFiltr
 
 class Busqueda extends Component {
 
+  state = {
+    checked: false,
+    precioMin: 0,
+    precioMax: 99999
+  }
 
   canchaSeleccionadaHandler = id => {
     this.props.seleccionarCancha(id)
@@ -22,7 +27,19 @@ class Busqueda extends Component {
     }
 
   componentDidMount() {
-    this.props.cargarCanchasFiltradas();
+    const { precioMin, precioMax } = this.state;
+    this.props.cargarCanchasFiltradas(precioMin, precioMax)
+  }
+
+  filtrarPrecio = (precioMin, precioMax) => {
+    if (precioMin > precioMax) {
+      alert("El precio mínimo no puede ser superior al precio máximo.")  
+    } 
+    else {
+      this.props.cargarCanchasFiltradas(precioMin, precioMax)
+    }
+    this.textInputMin.clear()
+    this.textInputMax.clear()
   }
 
   render() {
@@ -35,6 +52,23 @@ class Busqueda extends Component {
         icon={{ type: 'font-awesome', name: 'search' }}
         placeholder='Buscar canchas...' 
       />
+      <View style={{flexDirection: 'row', justifyContent: 'center', marginTop: 10}}>
+        <TextInput
+          ref={inputMin => { this.textInputMin = inputMin }}
+          placeholder="Precio mínimo"
+          style={{width: 100}}
+          onChangeText={precioMin => this.setState({precioMin})}
+        />
+        <TextInput
+        ref={inputMax => { this.textInputMax = inputMax }}
+          placeholder="Precio máximo"
+          style={{width: 100}}
+          onChangeText={precioMax => this.setState({precioMax})}
+        />
+        <View style={{marginLeft: 15, height: 40}}>
+          <Button title="Ir" onPress={() => this.filtrarPrecio(this.state.precioMin, this.state.precioMax)}/>
+        </View>  
+      </View>     
       <CanchaDetalle 
         canchaSeleccionada={this.props.canchaSeleccionada}
         onModalClosed={this.modalClosedHandler}
@@ -63,7 +97,7 @@ const mapDispatchToProps = dispatch => {
     seleccionarCancha: id => dispatch(seleccionarCancha(id)),
     ocultarModalCancha: () => dispatch(ocultarModalCancha()),
     buscarCancha: nombre => dispatch(buscarCancha(nombre)),
-    cargarCanchasFiltradas: () => dispatch(cargarCanchasFiltradas()),
+    cargarCanchasFiltradas: (precioMin, precioMax) => dispatch(cargarCanchasFiltradas(precioMin, precioMax)),
     traerCanchas: () => dispatch(traerCanchas()),
   }
 }

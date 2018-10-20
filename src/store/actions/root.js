@@ -20,9 +20,11 @@ export const ocultarModalCancha = () => {
     }
 }
 
-export const cargarCanchasFiltradas = () => {
+export const cargarCanchasFiltradas = (precioMin, precioMax) => {
     return {
-        type: CARGAR_CANCHAS_FILTRADAS
+        type: CARGAR_CANCHAS_FILTRADAS,
+        precioMin,
+        precioMax
     }
 }
 

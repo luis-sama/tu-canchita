@@ -32,7 +32,7 @@ class Auth extends Component {
     });    
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     var dbCanchas = firebase.database().ref().child('canchas');
     dbCanchas.on('child_added', data => {
       let turnoAdd = [];
@@ -105,6 +105,10 @@ class Auth extends Component {
 
   };
 
+  logueaFacil = () => {
+    startMainTabs()
+  }
+
   signuphandler = () => {
     this.props.navigator.push({
       screen: 'miApp.SignUpScreen',
@@ -137,7 +141,7 @@ class Auth extends Component {
           </View>
           <Button title='Creá una cuenta' onPress={this.signuphandler} style={{flex:1}}/>
         </View>
-        <View style={{marginTop: 70}}>
+        <View style={{marginTop: 50}}>
           <Icon.Button 
             name="facebook-box" 
             backgroundColor="#3b5998" 
@@ -150,6 +154,10 @@ class Auth extends Component {
           <Icon.Button name="google-plus" backgroundColor="red" onPress={this.loginConGoogleHandler}>
             Ingresá con Google
           </Icon.Button>
+        </View>
+
+        <View style={{marginTop: 10}}>
+          <Button title="Entrar" onPress={this.logueaFacil}/>
         </View>
       </ImageBackground>
     );

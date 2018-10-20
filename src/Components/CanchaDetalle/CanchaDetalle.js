@@ -3,7 +3,7 @@ import { Modal, View, Image, Text, Button, StyleSheet, ScrollView } from 'react-
 import firebase from 'firebase';
 import ListaTurnos from '../ListaTurnos/ListaTurnos';
 import { connect } from 'react-redux';
-import { seleccionarTurno } from '../../store/actions/index'
+import { seleccionarTurno, cargarCanchasFiltradas, buscarCancha } from '../../store/actions/index'
 
 class CanchaDetalle extends Component {
   state = {
@@ -15,8 +15,6 @@ class CanchaDetalle extends Component {
     var dbTurno = firebase.database().ref().child(`canchas/${canchaSeleccionada.id}/turnos/${id}`)
     dbTurno.update({alquilado: true})
     .then(this.setState({comodin: '-'}))
-
-    // this.props.seleccionarTurno(id);
   };
 
   componentDidUpdate() {
@@ -27,6 +25,8 @@ class CanchaDetalle extends Component {
         canchaSeleccionada.turnos.map(turno => {
           if (turno.id == snap.key) {
             turno.alquilado = snap.val().alquilado
+            this.props.buscarCancha('');
+            this.props.cargarCanchasFiltradas();
           }
         })
       })
@@ -85,6 +85,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     seleccionarTurno: id => dispatch(seleccionarTurno(id)),
+    cargarCanchasFiltradas: () => dispatch(cargarCanchasFiltradas()),
+    buscarCancha: nombre => dispatch(buscarCancha(nombre)),
   }
 }
 

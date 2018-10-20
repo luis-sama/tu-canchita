@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Rating } from 'react-native-elements';
 
 const Cancha = (props) => (
     <TouchableOpacity onPress={props.onItemPressed} style={styles.canchaItem}>

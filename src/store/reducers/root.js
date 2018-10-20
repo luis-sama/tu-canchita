@@ -1,4 +1,3 @@
-import canchas from "../../json/canchas.json";
 import firebase from "firebase";
 import {
   SELECCIONAR_CANCHA,
@@ -11,7 +10,7 @@ import {
 
 const initialState = {
   canchas: [],
-  canchasFiltradas: canchas,
+  canchasFiltradas: [],
   canchaSeleccionada: null
 };
 
@@ -39,7 +38,9 @@ const reducer = (state = initialState, action) => {
     case CARGAR_CANCHAS_FILTRADAS:
       return {
         ...state,
-        canchasFiltradas: state.canchas
+        canchasFiltradas: state.canchas.filter(cancha => {
+          return (action.precioMin <= cancha.precio && cancha.precio <= action.precioMax)
+        })
       };
     case SELECCIONAR_TURNO:
       return {
@@ -50,22 +51,6 @@ const reducer = (state = initialState, action) => {
           }
         })
       };
-    case TRAER_CANCHAS:
-      return {
-        ...state,
-        canchas: 
-          firebase.database().ref().child('canchas').on('child_added', data => {
-            this.props.canchas.push({
-              id: data.key,
-              nombre: data.val().nombre,
-              imagen: data.val().imagen,
-              precio: data.val().precio,
-              puntaje: data.val().puntaje,
-              turnos: data.val().turnos,
-              ubicacion: data.val().ubicacion
-            })
-          })
-      }
     default:
       return state;
   }
