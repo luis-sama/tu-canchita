@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, View, Image, Text, Button, StyleSheet, ScrollView } from 'react-native';
+import { Modal, View, Image, Text, Button, StyleSheet, ScrollView, WebView } from 'react-native';
 import firebase from 'firebase';
 import ListaTurnos from '../ListaTurnos/ListaTurnos';
 import { connect } from 'react-redux';
@@ -7,14 +7,27 @@ import { seleccionarTurno, cargarCanchasFiltradas, buscarCancha } from '../../st
 
 class CanchaDetalle extends Component {
   state = {
-    comodin: null
+    comodin: null,
+    user: firebase.auth().currentUser,
+    verMapa: false
   }
 
   turnoSelectedHandler = id => {
     const { canchaSeleccionada } = this.props
     var dbTurno = firebase.database().ref().child(`canchas/${canchaSeleccionada.id}/turnos/${id}`)
-    dbTurno.update({alquilado: true})
-    .then(this.setState({comodin: '-'}))
+    canchaSeleccionada.turnos.map(turno => {
+      if (turno.id == id) {
+        if (turno.alquilado !== true) {
+          dbTurno.update({alquilado: true})
+          .then(dbTurno.update({usuario: this.state.user.email})
+            .then(this.setState({comodin: ''})))
+          return;
+        } else {
+          alert('Ya està alquilado')
+        }
+      }      
+    })
+    
   };
 
   componentDidUpdate() {
@@ -37,10 +50,19 @@ class CanchaDetalle extends Component {
     let modalContent = null;
 
     if (this.props.canchaSeleccionada) {
+      let mapa = null
+      if (this.state.verMapa) {
+        mapa = <WebView
+          source={{uri: this.props.canchaSeleccionada.ubicacion}}
+          style={{marginTop: 20}}
+        />
+      }
       modalContent = (
         <View>
           <Text style={styles.placeName}>{this.props.canchaSeleccionada.nombre}</Text>
           <Image source={this.props.canchaSeleccionada.imagen} style={styles.placeImage} />
+          <Button title="Ver Mapa" onPress={() => this.setState({verMapa:!this.state.verMapa})}/>
+          {mapa}          
           <ListaTurnos 
             turnos={this.props.canchaSeleccionada.turnos}
             onTurnoSelected={this.turnoSelectedHandler}

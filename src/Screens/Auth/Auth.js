@@ -105,10 +105,6 @@ class Auth extends Component {
 
   };
 
-  logueaFacil = () => {
-    startMainTabs()
-  }
-
   signuphandler = () => {
     this.props.navigator.push({
       screen: 'miApp.SignUpScreen',
@@ -154,10 +150,6 @@ class Auth extends Component {
           <Icon.Button name="google-plus" backgroundColor="red" onPress={this.loginConGoogleHandler}>
             Ingresá con Google
           </Icon.Button>
-        </View>
-
-        <View style={{marginTop: 10}}>
-          <Button title="Entrar" onPress={this.logueaFacil}/>
         </View>
       </ImageBackground>
     );

@@ -7,7 +7,10 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 class Perfil extends Component {
   state = {
     editarNombre: false,
-    editarMail: false
+    editarMail: false,
+    user: firebase.auth().currentUser,
+    nombre: '',
+    email: '',
   }
 
   handleLogOut = () => {
@@ -20,8 +23,19 @@ class Perfil extends Component {
     .catch(error => alert(error))
   }
 
+  // cambioMail(email) {
+  //   this.setState({email})
+  //   this.state.user.updateEmail(this.state.email)
+  // }
+
+  cambioNombre(nombre) {
+    this.setState({nombre})
+    this.state.user.updateProfile({displayName: this.state.nombre})
+  }
+
   render() {
-    var user = firebase.auth().currentUser;
+    // var user = firebase.auth().currentUser;
+    const { user } = this.state;
     var storageRef = firebase.storage().ref()
     return (
       <View style={styles.fondo}>
@@ -33,13 +47,13 @@ class Perfil extends Component {
           onPress={() => console.log(user.uid)}
         />
         <View style={{flexDirection:'row'}}>
-          <TextInput style={{fontSize: 18, color: 'black', marginTop: 10}} editable={this.state.editarNombre}>{user.displayName}</TextInput>
+          <TextInput style={{fontSize: 18, color: 'black', marginTop: 10, width: 100}} onBlur={nombre => this.cambioNombre(nombre)} editable={this.state.editarNombre} placeholder='nombre'>{user.displayName}</TextInput>
           <TouchableOpacity>
             <Icon name="pencil" style={{fontSize: 18, color: 'black', marginTop: 10}} onPress={() => this.setState({editarNombre:!this.state.editarNombre})}/>
           </TouchableOpacity>
         </View>
         <View style={{flexDirection:'row'}}>
-          <TextInput style={{fontSize: 18, color: 'black', marginTop: 10}} editable={this.state.editarMail}>{user.email}</TextInput>
+          <TextInput style={{fontSize: 18, color: 'black', marginTop: 10}} onBlur={email => this.cambioMail(email)} editable={this.state.editarMail}>{user.email}</TextInput>
           <TouchableOpacity>
             <Icon name="pencil" style={{fontSize: 18, color: 'black', marginTop: 10}} onPress={() => this.setState({editarMail:!this.state.editarMail})}/>
           </TouchableOpacity>
