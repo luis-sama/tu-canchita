@@ -3,11 +3,11 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, Share } from 'react-na
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Rating } from 'react-native-elements';
 
-const onShare = () => {
+const onShare = (nombreCancha) => {
   Share.share({
     title: 'El título',
     url: 'www.luifa.com',
-    message: 'Chileno puto'
+    message: `Vení a visitar ${nombreCancha}`
   }), {
     dialogTitle: 'Compartir la canchita'
   }
@@ -33,7 +33,7 @@ const Cancha = (props) => (
           </Text>
         </View>
       <Text style={styles.canchaPrecio}>${props.precio}</Text>
-      <TouchableOpacity onPress={onShare}>
+      <TouchableOpacity onPress={() => onShare(props.nombre)}>
         <Icon name='share' size={16}/>
       </TouchableOpacity>
     </TouchableOpacity>
