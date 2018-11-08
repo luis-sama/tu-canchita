@@ -18,19 +18,11 @@ const Cancha = (props) => (
       <Image resizeMode="contain" source={props.imagen} style={styles.canchaImagen} />
         <View style={{flexDirection: "column"}}>
           <Text style={styles.canchaNombre}>{props.nombre}</Text>
-          {/* <Text>{props.ubicacion}</Text> */}
-          <Text>
-            {props.puntaje}
-            <Icon
-              name='star'
-              size={15}
-            />
-            {/* <Rating
-              imageSize={15}
-              readonly
-              startingValue={3}
-            /> */}
-          </Text>
+          <Rating
+            imageSize={15}
+            readonly
+            startingValue={props.puntaje}
+          />
         </View>
       <Text style={styles.canchaPrecio}>${props.precio}</Text>
       <TouchableOpacity onPress={() => onShare(props.nombre, props.ubicacion)}>
